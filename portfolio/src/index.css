@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+/* @theme {
+
+} */
+
+@layer base {
+  html {
+    color-scheme: light dark;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+  }
+
+  #root {
+    max-width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+  }
+}
