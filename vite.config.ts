@@ -5,6 +5,7 @@ import tailwindcss from '@tailwindcss/vite'
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: '/OC-Integrateur_Web-P12',
   plugins: [
     react(),
     babel({ presets: [reactCompilerPreset()] }),

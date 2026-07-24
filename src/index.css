@@ -1,0 +1,153 @@
+@import 'tailwindcss';
+
+/* Dark theme as default */
+html,
+.dark {
+  --bg-dark: oklch(0.1 0.04 275);
+  --bg: oklch(0.15 0.04 275);
+  --bg-light: oklch(0.2 0.04 275);
+  --text: oklch(0.96 0.08 275);
+  --text-muted: oklch(0.76 0.08 275);
+  --highlight: oklch(0.5 0.08 275);
+  --border: oklch(0.4 0.08 275);
+  --border-muted: oklch(0.3 0.08 275);
+  --primary: oklch(0.76 0.1 275);
+  --secondary: oklch(0.76 0.1 95);
+  --bg-danger: oklch(0.7 0.08 30);
+  --bg-warning: oklch(0.7 0.08 100);
+  --bg-success: oklch(0.7 0.08 160);
+  --bg-info: oklch(0.7 0.08 260);
+  --danger: oklch(0.7 0.24 30);
+  --warning: oklch(0.7 0.24 85);
+  --success: oklch(0.7 0.24 160);
+  --info: oklch(0.7 0.24 260);
+  --shadow: 0px 2px 2px oklch(0 0 0 / 0.2), 0px 4px 4px oklch(0 0 0 / 0.1);
+  --shadow-strong:
+    2px 4px 4px oklch(0 0 0 / 0.4), 2px 6px 6px oklch(0 0 0 / 0.2);
+}
+
+.light {
+  --bg-dark: oklch(0.92 0.04 275);
+  --bg: oklch(0.96 0.04 275);
+  --bg-light: oklch(1 0.04 275);
+  --text: oklch(0.15 0.08 275);
+  --text-muted: oklch(0.4 0.08 275);
+  --highlight: oklch(1 0.08 275);
+  --border: oklch(0.6 0.08 275);
+  --border-muted: oklch(0.7 0.08 275);
+  --primary: oklch(0.4 0.1 275);
+  --secondary: oklch(0.6 0.1 95);
+  --bg-danger: oklch(0.5 0.08 30);
+  --bg-warning: oklch(0.5 0.08 100);
+  --bg-success: oklch(0.5 0.08 160);
+  --bg-info: oklch(0.5 0.08 260);
+  --secondary: oklch(0.6 0.1 95);
+  --danger: oklch(0.6 0.24 30);
+  --warning: oklch(0.6 0.24 85);
+  --success: oklch(0.6 0.24 160);
+  --info: oklch(0.6 0.24 260);
+  --shadow: 0px 2px 2px oklch(0 0 0 / 0.2), 0px 4px 4px oklch(0 0 0 / 0.1);
+}
+
+@layer base {
+  html {
+    color-scheme: light dark;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    background: linear-gradient(
+      to bottom right,
+      var(--bg-light),
+      var(--bg-dark)
+    );
+    color: var(--text);
+    transition-property:
+      color,
+      background-color,
+      border-color,
+      outline-color,
+      text-decoration-color,
+      fill,
+      stroke,
+      --tw-gradient-from,
+      --tw-gradient-via,
+      --tw-gradient-to,
+      opacity,
+      box-shadow,
+      transform,
+      translate,
+      scale,
+      rotate,
+      filter,
+      -webkit-backdrop-filter,
+      backdrop-filter,
+      display,
+      content-visibility,
+      overlay,
+      pointer-events;
+    transition-timing-function: var(--default-transition-timing-function);
+    transition-duration: var(--default-transition-duration);
+  }
+
+  #root {
+    max-width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+  }
+
+  section {
+    display: flex;
+    justify-content: center;
+  }
+
+  a.current {
+    color: var(--secondary);
+    border-color: var(--secondary);
+  }
+
+  a,
+  button,
+  input[type='submit'] {
+    padding: 0.6rem;
+    color: var(--primary);
+    border: 2px solid var(--primary);
+    border-radius: 8px;
+    box-shadow: 2px 2px 0 0;
+    cursor: pointer;
+    &:hover {
+      background: var(--highlight);
+    }
+    &:active {
+      color: var(--secondary);
+      background: none;
+      border-color: var(--secondary);
+      box-shadow: 0 0 1px 1px;
+    }
+  }
+
+  input:not([type='submit']),
+  textarea {
+    padding: 0.6rem;
+    color: var(--primary);
+    border: 2px solid var(--primary);
+    border-radius: 8px;
+    background-color: var(--bg);
+    &:hover {
+      background: var(--highlight);
+    }
+    &:focus {
+      color: var(--secondary);
+      background: none;
+      border-color: var(--secondary);
+    }
+  }
+}
