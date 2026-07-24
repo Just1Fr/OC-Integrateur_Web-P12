@@ -67,10 +67,6 @@ export default function ProjectCard({ project, className = '' }: ModalProps) {
           />
         </div>
       </Modal>
-      {/* <div 
-        className='flex-1 grid gap-5'
-        style={{ gridTemplateRows: '.25fr 1fr' }}
-      > */}
       <div className='flex flex-1 flex-col gap-5'>
         <h3 className='flex items-center justify-center text-lg font-bold sm:h-[8dvh]'>
           {project.title}

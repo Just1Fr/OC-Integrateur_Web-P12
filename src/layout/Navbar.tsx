@@ -80,7 +80,7 @@ export default function Navbar() {
         <nav
           className={`sm:max-w-[85%] ${hamburgerNav && navOpened && 'transition-[opacity,translate] starting:-translate-y-full starting:opacity-0'}`}
         >
-          <ul className={`flex flex-col gap-5 sm:flex-row`}>{navItems}</ul>
+          <ul className='flex flex-col gap-5 sm:flex-row'>{navItems}</ul>
         </nav>
       )}
       <ThemeBtn

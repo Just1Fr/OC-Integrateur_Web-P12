@@ -30,31 +30,14 @@ export default function Carousel({ slides }: ModalProps) {
   const [index, setIndex] = useState(0)
   const [direction, setDirection] = useState<null | Direction>(null)
 
-  // const handleNext = (e: React.MouseEvent<HTMLElement>) => {
   const handleNext = () => {
     setDirection('right')
     setIndex((index + 1) % slidesCount)
-    // closeAccordions(e)
   }
-  // const handlePrev = (e: React.MouseEvent<HTMLElement>) => {
   const handlePrev = () => {
     setDirection('left')
     setIndex((index - 1 + slidesCount) % slidesCount)
-    // closeAccordions(e)
   }
-
-  // const closeAccordions = (e: React.MouseEvent<HTMLElement>) => {
-  //   const caroussel = e.currentTarget.closest('.caroussel')
-  //   if (direction === 'left') {
-  //     caroussel?.querySelector(`slide-${maxVisible - 1}`)
-  //       ?.querySelectorAll('.accordion [aria-expanded="true"]')
-  //         ?.forEach(slide => slide.ariaExpanded = 'false')
-  //   } else if (direction == 'right') {
-  //     caroussel?.querySelector(`slide-0`)
-  //       ?.querySelectorAll('.accordion [aria-expanded="true"]')
-  //         ?.forEach(slide => slide.ariaExpanded = 'false')
-  //   }
-  // }
 
   const indicators: React.ReactNode[] = []
   for (let i = 0; i < slidesCount; i++) {
@@ -67,7 +50,7 @@ export default function Carousel({ slides }: ModalProps) {
   }
 
   return (
-    <div className='caroussel flex flex-col gap-5'>
+    <div className='carousel flex flex-col gap-5'>
       <div className='flex items-center gap-5'>
         {/* Non-mobile view */}
         {maxVisible > 1 && (
@@ -82,7 +65,7 @@ export default function Carousel({ slides }: ModalProps) {
         )}
 
         <div
-          className={`grid flex-1 gap-5`}
+          className='grid flex-1 gap-5'
           style={{ gridTemplateColumns: `repeat(${maxVisible}, 1fr)` }}
         >
           {slides.map((item, idx) => {
