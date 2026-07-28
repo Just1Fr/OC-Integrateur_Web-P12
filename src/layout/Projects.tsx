@@ -13,7 +13,7 @@ export default function Projects() {
       className='flex flex-col gap-5 overflow-x-hidden rounded-xl border-2 border-(--border) bg-(--bg) p-5 shadow-(--shadow)'
     >
       <h2 className='text-3xl text-(--text-muted) md:text-4xl lg:text-5xl'>
-        Projets les plus valorisants
+        Projets notables
       </h2>
       <Carousel slides={cards} />
     </section>
